@@ -5,11 +5,9 @@
     <classes>
       <class name="testCases.TC001_LoginTest">
         <methods>
-          <include name="verifyLogin"/>
+          <include name="orderHistoryTest"/>
           <include name="tearDown"/>
-          <include name="placeOrder"/>
           <include name="setup"/>
-          <include name="clickOnCart"/>
           <include name="getProductAndAddtoCart"/>
         </methods>
       </class> <!-- testCases.TC001_LoginTest -->

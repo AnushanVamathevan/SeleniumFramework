@@ -1,5 +1,6 @@
 package pageObjects;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -19,6 +20,10 @@ public class LandingPage extends BasePage{
 	@FindBy(xpath="//input[@id='login']")
 	WebElement submit;
 	
+	@FindBy(css="[class*='flyInOut']")
+	WebElement errorMessage;
+	By eM=By.cssSelector("[class*='flyInOut']");
+	
 	public void sendEmail(String email) {
 		userEmail.sendKeys(email);
 	}
@@ -28,5 +33,10 @@ public class LandingPage extends BasePage{
 	}
 	public void clickLogin() {
 		submit.click();
+	}
+	
+	public String getErrorMessage() {
+		waitForElementToAppear(eM);
+		return errorMessage.getText();
 	}
 }

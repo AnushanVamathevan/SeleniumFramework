@@ -23,10 +23,11 @@ public class CartPage extends BasePage{
 	By cartP=By.xpath("//div[@class='cart']//h3");
 	By button=By.xpath("//div[contains(@class,'sub')]//button");
 	
-	public void checkProductName(String product_Name) {
+	public boolean checkProductName(String product_Name) {
 		waitForElementToAppear(cartP);
 		boolean match=cartProducts.stream().anyMatch(s->s.getText().equalsIgnoreCase(product_Name));
-		Assert.assertTrue(match);
+		
+		return match;
 	}
 	
 	public void clickCheckOut() {

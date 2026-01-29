@@ -21,8 +21,8 @@ public class ProductCatalogue extends BasePage {
 	@FindBy(css=".mb-3")
 	List<WebElement> products;
 	
-	@FindBy(xpath="//ul//li[4]/button")
-	WebElement cart_click;
+	@FindBy(xpath="//ul//li[3]//button")
+	WebElement order;
 	
 	public List<WebElement>getProductList() {
 		waitForElementToAppear(productsListWait);
@@ -40,9 +40,9 @@ public class ProductCatalogue extends BasePage {
 		waitForElementToAppear(toastContainer);
 		waitForElementToDisAppear(animationCircle);
 	}
-	public void clickCart() {
-		executorClick(cart_click);
-		cart_click.click();
+	
+	public void clickOrder() {
+		order.click();
 	}
 	
 }
